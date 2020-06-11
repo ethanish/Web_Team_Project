@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>당신과 성향이 맞는 강아지는?</title>
+
+<style>
+@font-face {
+	font-family: 'photoF';
+	src: url(PhotoFont.ttf);
+}
+
+@font-face {
+	font-family: 'photoF3';
+	src: url(photoFont3.ttf);
+}
+
+@font-face {
+	font-family: 'photoF1';
+	src: url(photoFont1.ttf);
+}
+
+@font-face {
+	font-family: 'rocatF';
+	src: url(rocatFont.ttf);
+}
+
+@font-face {
+	font-family: 'fireF';
+	src: url(fireFont.ttf);
+}
+
+div.testname {
+	line-height: 10em;
+}
+
+p.Question {
+	line-height: 3;
+}
+
+div.Answer {
+	line-height: 1;
+}
+
+.submit {
+	width: 100px;
+	background-color: #58ACFA;
+	border: none;
+	color: #fff;
+	padding: 15px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	margin: 4px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"]+label span {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	background: url(checkbox.svg) left top no-repeat;
+	cursor: pointer;
+	background-size: cover;
+}
+
+input[type="radio"]:checked+label span {
+	background: url(checkbox.svg) -26px top no-repeat;
+	background-size: cover;
+}
+</style>
+</head>
+<body>
+
+	<form name="test" action="result_01.jsp" method="post">
+		<div style="text-align: center;">
+			<div class="testname"
+				style="font-family: fireF; font-size: 35px; text-align: center; color: #58ACFA">
+				성향 테스트</div>
+			<p></p>
+			<p class="Question" id="Q1" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+
+				<input type="radio" id="openQ1_5" name="openQ1" value="5" required
+					 /><label for="openQ1_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="openQ1_4" name="openQ1" value="4" /><label
+					for="openQ1_4"><span></span> 그렇다 </label> <input type="radio"
+					name="openQ1" id="openQ1_3" value="3" /><label for="openQ1_3"><span></span>
+					보통이다 </label> <input type="radio" name="openQ1" id="openQ1_2" value="2" /><label
+					for="openQ1_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="openQ1" id="openQ1_1" value="1" /><label for="openQ1_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q2" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="openQ2_5" name="openQ2" value="5" required
+					 /><label for="openQ2_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="openQ2_4" name="openQ2" value="4" /><label
+					for="openQ2_4"><span></span> 그렇다 </label> <input type="radio"
+					name="openQ2" id="openQ2_3" value="3" /><label for="openQ2_3"><span></span>
+					보통이다 </label> <input type="radio" name="openQ2" id="openQ2_2" value="2" /><label
+					for="openQ2_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="openQ2" id="openQ2_1" value="1" /><label for="openQ2_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q3" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="openQ3_5" name="openQ3" value="5" required
+					 /><label for="openQ3_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="openQ3_4" name="openQ3" value="4" /><label
+					for="openQ3_4"><span></span> 그렇다 </label> <input type="radio"
+					name="openQ3" id="openQ3_3" value="3" /><label for="openQ3_3"><span></span>
+					보통이다 </label> <input type="radio" name="openQ3" id="openQ3_2" value="2" /><label
+					for="openQ3_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="openQ3" id="openQ3_1" value="1" /><label for="openQ3_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q4" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="sincerQ1_5" name="sincerQ1" value="5" required
+					 /><label for="sincerQ1_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="sincerQ1_4" name="sincerQ1" value="4" /><label
+					for="sincerQ1_4"><span></span> 그렇다 </label> <input type="radio"
+					name="sincerQ1" id="sincerQ1_3" value="3" /><label for="sincerQ1_3"><span></span>
+					보통이다 </label> <input type="radio" name="sincerQ1" id="sincerQ1_2" value="2" /><label
+					for="sincerQ1_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="sincerQ1" id="sincerQ1_1" value="1" /><label for="sincerQ1_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q5" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="sincerQ2_5" name="sincerQ2" value="5" required
+					 /><label for="sincerQ2_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="sincerQ2_4" name="sincerQ2" value="4" /><label
+					for="sincerQ2_4"><span></span> 그렇다 </label> <input type="radio"
+					name="sincerQ2" id="sincerQ2_3" value="3" /><label for="sincerQ2_3"><span></span>
+					보통이다 </label> <input type="radio" name="sincerQ2" id="sincerQ2_2" value="2" /><label
+					for="sincerQ2_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="sincerQ2" id="sincerQ2_1" value="1" /><label for="sincerQ2_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q6" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="sincerQ3_5" name="sincerQ3" value="5" required
+					 /><label for="sincerQ3_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="sincerQ3_4" name="sincerQ3" value="4" /><label
+					for="sincerQ3_4"><span></span> 그렇다 </label> <input type="radio"
+					name="sincerQ3" id="sincerQ3_3" value="3" /><label for="sincerQ3_3"><span></span>
+					보통이다 </label> <input type="radio" name="sincerQ3" id="sincerQ3_2" value="2" /><label
+					for="sincerQ3_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="sincerQ3" id="sincerQ3_1" value="1" /><label for="sincerQ3_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q7" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="extraQ1_5" name="extraQ1" value="5" required
+					 /><label for="extraQ1_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="extraQ1_4" name="extraQ1" value="4" /><label
+					for="extraQ1_4"><span></span> 그렇다 </label> <input type="radio"
+					name="extraQ1" id="extraQ1_3" value="3" /><label for="extraQ1_3"><span></span>
+					보통이다 </label> <input type="radio" name="extraQ1" id="extraQ1_2" value="2" /><label
+					for="extraQ1_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="extraQ1" id="extraQ1_1" value="1" /><label for="extraQ1_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q8" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="extraQ2_5" name="extraQ2" value="5" required
+					 /><label for="extraQ2_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="extraQ2_4" name="extraQ2" value="4" /><label
+					for="extraQ2_4"><span></span> 그렇다 </label> <input type="radio"
+					name="extraQ2" id="extraQ2_3" value="3" /><label for="extraQ2_3"><span></span>
+					보통이다 </label> <input type="radio" name="extraQ2" id="extraQ2_2" value="2" /><label
+					for="extraQ2_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="extraQ2" id="extraQ2_1" value="1" /><label for="extraQ2_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q9" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="extraQ3_5" name="extraQ3" value="5" required
+					 /><label for="extraQ3_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="extraQ3_4" name="extraQ3" value="4" /><label
+					for="extraQ3_4"><span></span> 그렇다 </label> <input type="radio"
+					name="extraQ3" id="extraQ3_3" value="3" /><label for="extraQ3_3"><span></span>
+					보통이다 </label> <input type="radio" name="extraQ3" id="extraQ3_2" value="2" /><label
+					for="extraQ3_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="extraQ3" id="extraQ3_1" value="1" /><label for="extraQ3_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q10" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="agreeQ1_5" name="agreeQ1" value="5" required
+					 /><label for="agreeQ1_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="agreeQ1_4" name="agreeQ1" value="4" /><label
+					for="agreeQ1_4"><span></span> 그렇다 </label> <input type="radio"
+					name="agreeQ1" id="agreeQ1_3" value="3" /><label for="agreeQ1_3"><span></span>
+					보통이다 </label> <input type="radio" name="agreeQ1" id="agreeQ1_2" value="2" /><label
+					for="agreeQ1_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="agreeQ1" id="agreeQ1_1" value="1" /><label for="agreeQ1_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p class="Question" id="Q11" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="agreeQ2_5" name="agreeQ2" value="5" required
+					 /><label for="agreeQ2_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="agreeQ2_4" name="agreeQ2" value="4" /><label
+					for="agreeQ2_4"><span></span> 그렇다 </label> <input type="radio"
+					name="agreeQ2" id="agreeQ2_3" value="3" /><label for="agreeQ2_3"><span></span>
+					보통이다 </label> <input type="radio" name="agreeQ2" id="agreeQ2_2" value="2" /><label
+					for="agreeQ2_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="agreeQ2" id="agreeQ2_1" value="1" /><label for="agreeQ2_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q12" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="agreeQ3_5" name="agreeQ3" value="5" required
+					 /><label for="agreeQ3_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="agreeQ3_4" name="agreeQ3" value="4" /><label
+					for="agreeQ3_4"><span></span> 그렇다 </label> <input type="radio"
+					name="agreeQ3" id="agreeQ3_3" value="3" /><label for="agreeQ3_3"><span></span>
+					보통이다 </label> <input type="radio" name="agreeQ3" id="agreeQ3_2" value="2" /><label
+					for="agreeQ3_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="agreeQ3" id="agreeQ3_1" value="1" /><label for="agreeQ3_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q13" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="neurQ1_5" name="neurQ1" value="5" required
+					 /><label for="neurQ1_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="neurQ1_4" name="neurQ1" value="4" /><label
+					for="neurQ1_4"><span></span> 그렇다 </label> <input type="radio"
+					name="neurQ1" id="neurQ1_3" value="3" /><label for="neurQ1_3"><span></span>
+					보통이다 </label> <input type="radio" name="neurQ1" id="neurQ1_2" value="2" /><label
+					for="neurQ1_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="neurQ1" id="neurQ1_1" value="1" /><label for="neurQ1_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q14" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="neurQ2_5" name="neurQ2" value="5" required
+					 /><label for="neurQ2_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="neurQ2_4" name="neurQ2" value="4" /><label
+					for="neurQ2_4"><span></span> 그렇다 </label> <input type="radio"
+					name="neurQ2" id="neurQ2_3" value="3" /><label for="neurQ2_3"><span></span>
+					보통이다 </label> <input type="radio" name="neurQ2" id="neurQ2_2" value="2" /><label
+					for="neurQ2_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="neurQ2" id="neurQ2_1" value="1" /><label for="neurQ2_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+
+			<p></p>
+			<p></p>
+			<p class="Question" id="Q15" style="font-family: photoF3;"></p>
+			<div class="Answer" style="font-family: photoF1;">
+				<input type="radio" id="neurQ3_5" name="neurQ3" value="5" required
+					 /><label for="neurQ3_5"><span></span> 매우 그렇다 </label> <input
+					type="radio" id="neurQ3_4" name="neurQ3" value="4" /><label
+					for="neurQ3_4"><span></span> 그렇다 </label> <input type="radio"
+					name="neurQ3" id="neurQ3_3" value="3" /><label for="neurQ3_3"><span></span>
+					보통이다 </label> <input type="radio" name="neurQ3" id="neurQ3_2" value="2" /><label
+					for="neurQ3_2"><span></span> 그렇지 않다 </label><input type="radio"
+					name="neurQ3" id="neurQ3_1" value="1" /><label for="neurQ3_1"><span></span>
+					매우 그렇지 않다 </label>
+			</div>
+			<br> <br>
+			<p></p>
+			<p>
+				<input class="submit" type="submit" style="font-family: photoF"
+					value="결과 보기">
+			</p>
+		</div>
+	</form>
+	<script>
+	
+		var qNum=0;
+		var questionList = new Array();
+		<!-- NumOpenness : 개방성 지수 / NumSincerity : 성실성 지수 / NumExtra : 외향성 지수 / NumAgree : 친화성 지수 / NumNeur : 신경성 지수-->
+		var NumOpenness=0,NumSincerity=0,NumExtra=0,NumAgree=0,NumNeur=0; 
+		
+		<!-- 각 성향 당 질문 8개 -->
+		var OpennessQ = ['나는 상상력이 풍부하다','나는 예술적 경험을 중요하게 생각한다','나는 기발한 사람이며, 깊이 생각한다','나는 아이디어를 떠올리는 일을 즐긴다','나는 몽상에 빠지는 것을 즐긴다','나는 창의적인 사람이다','나는 새로운 아이디어를 제시할 수 있다','나는 여러 방면에 호기심이 많다'];
+		var SincerityQ = ['나는 일을 철두철미하게 해낸다','나는 질서정연한 것을 좋아한다','나는 약속을 잘 지킨다','나는 일을 열심히 한다','나는 일을 미루지 않고 바로 시작한다','나는 일을 효율적으로 하는 사람이다','나는 계획을 세우고 그것을 따른다','나는 끈기를 갖고 일을 잘 끝낸다'];
+		var ExtraQ = ['나는 친구를 쉽게 사귄다','나는 사교적인 사람이다','나는 활력이 가득한 사람이다','나는 기쁨이 넘치는 사람이다','나는 말하기를 좋아한다','나는 열정이 넘치는 사람이다','나는 흥이 많다','나는 모험을 즐기는 편이다'];
+		var AgreeQ = ['나는 남을 잘 믿는 편이다','나는 다른 사람의 슬픔을 함께 괴로워한다','나는 배려를 잘 하며 사람들에게 친절하다','나는 남들과 협력하는 것을 좋아한다','나는 바라는 것 없이 남들을 돕는다','나는 사람들이 선한 의도를 갖고 있다고 믿는다','나는 다른 사람들에게 환영 받고 있다는 느낌을 준다','나는 나에 비해 처지가 안 좋은 사람들에 대해 연민을 느낀다'];
+		var NeurQ = ['나는 걱정이 많다','나는 화를 잘 낸다','나는 잘 우울해지는 편이다','나는 다른 사람에게 다가가는 게 힘들다','나는 종종 문제를 해결할 수 없을 것 같은 느낌이 든다','나는 최악의 상황에 대해 두려워하곤 한다','나는 종종 신경이 날카로울 때가 있다','나는 종종 기분 변화가 심해질 때가 있다'];
+		
+		<!--중복되지 않는 난수 만드는 함수-->
+		function shuffleRandom(n){ 
+	        var ar = new Array();
+	        var temp;
+	        var rnum;
+	 
+	        for(var i=0; i<n; i++){
+	            ar.push(i);
+	        }
+	 
+	        for(var i=0; i< ar.length ; i++)
+	        {
+	            rnum = Math.floor(Math.random() *(n-1));
+	            temp = ar[i];
+	            ar[i] = ar[rnum];
+	            ar[rnum] = temp;
+	        }
+	 
+	        return ar;
+		}
+		
+		
+		<!-- 질문 15개를 선정-->
+		var randArr = new Array();
+			
+		randArr = shuffleRandom(8);
+		for (var j=0;j<3;j++){
+			questionList[qNum++] = OpennessQ[randArr[j]]; 
+		}
+		randArr = shuffleRandom(8);
+		for(var j=0;j<3;j++){
+			questionList[qNum++] = SincerityQ[randArr[j]]; 
+		}
+
+		randArr = shuffleRandom(8);
+		for(var j=0;j<3;j++){
+			questionList[qNum++] = ExtraQ[randArr[j]]; 
+		}
+
+		randArr = shuffleRandom(8);
+		for(var j=0;j<3;j++){
+			questionList[qNum++] = AgreeQ[randArr[j]]; 
+		}
+
+		randArr = shuffleRandom(8);
+		for(var j=0;j<3;j++){
+			questionList[qNum++] = NeurQ[randArr[j]]; 
+		}
+		
+		
+		document.getElementById("Q1").innerHTML = "Q1. " + questionList[0];
+		document.getElementById("Q2").innerHTML = "Q2. " + questionList[1];
+		document.getElementById("Q3").innerHTML = "Q3. " + questionList[2];
+		document.getElementById("Q4").innerHTML = "Q4. " + questionList[3];
+		document.getElementById("Q5").innerHTML = "Q5. " + questionList[4];
+		document.getElementById("Q6").innerHTML = "Q6. " + questionList[5];
+		document.getElementById("Q7").innerHTML = "Q7. " + questionList[6];
+		document.getElementById("Q8").innerHTML = "Q8. " + questionList[7];
+		document.getElementById("Q9").innerHTML = "Q9. " + questionList[8];
+		document.getElementById("Q10").innerHTML = "Q10. " + questionList[9];
+		document.getElementById("Q11").innerHTML = "Q11. " + questionList[10];
+		document.getElementById("Q12").innerHTML = "Q12. " + questionList[11];
+		document.getElementById("Q13").innerHTML = "Q13. " + questionList[12];
+		document.getElementById("Q14").innerHTML = "Q14. " + questionList[13];
+		document.getElementById("Q15").innerHTML = "Q15. " + questionList[14];
+		
+
+	
+		<!--질문 선정 끝-->
+	
+	</script>
+
+
+</body>
+</html>

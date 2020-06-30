@@ -23,9 +23,9 @@
 	<h1 style="font-family: impact;">
 		<span class="mainlink" onclick="location.href='main.html'"> gotomain </span>
 	</h1>
-	<h2>Information to sign in</h2>
+	<h2>회원가입</h2>
 	
-	<h4>Provide your information</h4>
+	<h4>정보를 입력해 주세요</h4>
 	
 	<form name = "userInfo" action="signin_process.jsp" method="POST" onsubmit="return checkValue()">
 		<table>
@@ -47,7 +47,7 @@
 			</tr>
 			<tr>
 				<td>생년월일 :</td>
-				<td><input type="date" value="1994-04-05" name="birth_d"></td>
+				<td><input type="date" value="2020-07-02" name="birth_d"></td>
 			</tr>
 		</table>
 		<input type="reset" name="Reset" />

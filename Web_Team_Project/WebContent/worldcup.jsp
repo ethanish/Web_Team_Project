@@ -329,7 +329,7 @@
 		document.getElementById("round").innerHTML = "우승 "+tname[image[two[num]].name];
 		
 		document.getElementById("left").innerHTML=" ";
-		document.getElementById("right").innerHTML="<form action='result_02.jsp' id='"+tname[image[two[num]].name]+"' method='post'><input type='submit' value='정보보러가기'></form>";
+		document.getElementById("right").innerHTML="<form action='result_02.jsp' method='post'><input type='hidden' value='"+tname[image[two[num]].name]+"' name='tname'><input type='submit' value='정보보러가기'></form>";
 		document.getElementById("divVS").innerHTML="<img id='rightimg' src='img/"+image[two[num]].source+"'>";
 	}
 	</script>

@@ -16,27 +16,29 @@
 		</div>
 		<div class="main">
 			<div id = "left" class = "cleft"></div>
-			<div id = "divVS" class = "cmiddle"><img src="VS.jpg"></div>
+			<div id = "divVS" class = "cmiddle"><img src="img/VS.jpg"></div>
 			<div id = "right" class = "cright"></div>
 		</div>
 		<div class="main">
 			<div id = "winner"></div>
 		</div>
 	</div>
-<%@ include file="dbconn.jsp" %>
-<%
-	Statement stmt = conn.createStatement();
-	String sql = "SELECT name FROM Locate";
-	
-	ResultSet rs = stmt.executeQuery(sql);
-	String[] name=new String[32];
-	int i=0;
-	while(rs.next()){
-		name[i]=rs.getString(i);
-	}
-	
-	conn.close();
-%>
+	<%@ include file="dbconn.jsp" %>
+	<%
+		Statement stmt = conn.createStatement();
+		String sql = "SELECT name FROM tinfo";
+		
+		ResultSet rs = stmt.executeQuery(sql);
+		String[] name=new String[32];
+		int i=0;
+		
+		while(rs.next()){
+			name[i]=rs.getString("name");
+			i++;
+		}
+		
+		conn.close();
+	%>
 	<script>
 	var image=[];
 	var imageSet=[
@@ -82,7 +84,7 @@
 	var eightIndex=0;
 	var fourIndex=0;
 	var randNum=[];
-
+	var tname=[];
 	
 	for(var i=0;i<32;i++){
 		randNum[i]=Math.floor(Math.random()*32);
@@ -93,6 +95,9 @@
 			}
 		}
 	}
+	<%for(i=0; i<32;i++){%>
+	tname[<%=i%>]='<%=name[i]%>';
+	<%}%>
 	
 	for(var i=0;i<32;i++){
 		image[i] = imageSet[randNum[i]];
@@ -103,11 +108,11 @@
 	var firstL = document.getElementById("left");
 	var firstR = document.getElementById("right");
 	
-	firstL.innerHTML = "<img id='leftimg' onclick='sixteenf()' src='"+image[0].source+"'>";
-	firstR.innerHTML = "<img id='rightimg' onclick='sixteen2()' src='"+image[1].source+"'>";
+	firstL.innerHTML = "<img id='leftimg' onclick='sixteenf()' src='img/"+image[0].source+"'>";
+	firstR.innerHTML = "<img id='rightimg' onclick='sixteen2()' src='img/"+image[1].source+"'>";
 	
-	document.getElementById("leftName").innerHTML = image[0].name;
-	document.getElementById("rightName").innerHTML = image[1].name;
+	document.getElementById("leftName").innerHTML = tname[image[0].name];
+	document.getElementById("rightName").innerHTML = tname[image[1].name];
 	
 	function sixteenf(){
 		var left = document.getElementById("left");
@@ -116,10 +121,10 @@
 		
 		if(current == 15){
 			sixteen[current] = current*2;
-			left.innerHTML = "<img id='leftimg' onclick='next()' src='"+image[sixteen[0]].source+"'>";
-			right.innerHTML = "<img id='rightimg' onclick='next2()' src='"+image[sixteen[1]].source+"'>";
-			document.getElementById("leftName").innerHTML = image[sixteen[0]].name;
-			document.getElementById("rightName").innerHTML = image[sixteen[1]].name;
+			left.innerHTML = "<img id='leftimg' onclick='next()' src='img/"+image[sixteen[0]].source+"'>";
+			right.innerHTML = "<img id='rightimg' onclick='next2()' src='img/"+image[sixteen[1]].source+"'>";
+			document.getElementById("leftName").innerHTML = tname[image[sixteen[0]].name];
+			document.getElementById("rightName").innerHTML = tname[image[sixteen[1]].name];
 			document.getElementById("round").textContent = "16강 1/8";
 			return;
 		}
@@ -131,11 +136,11 @@
 		document.getElementById("round").textContent = "32강 "+(current+1)+"/16";
 		
 		
-		left.innerHTML = "<img id='leftimg' onclick='sixteenf()' src='"+image[current*2].source+"'>";
-		right.innerHTML = "<img id='rightimg' onclick='sixteen2()' src='"+image[current*2+1].source+"'>";
+		left.innerHTML = "<img id='leftimg' onclick='sixteenf()' src='img/"+image[current*2].source+"'>";
+		right.innerHTML = "<img id='rightimg' onclick='sixteen2()' src='img/"+image[current*2+1].source+"'>";
 		
-		document.getElementById("leftName").innerHTML = image[current*2].name;
-		document.getElementById("rightName").innerHTML = image[current*2+1].name;
+		document.getElementById("leftName").innerHTML = tname[image[current*2].name];
+		document.getElementById("rightName").innerHTML = tname[image[current*2+1].name];
 	}
 	function sixteen2(){
 		var left = document.getElementById("left");
@@ -144,10 +149,10 @@
 		
 		if(current == 15){
 			sixteen[current] = current*2+1;
-			left.innerHTML = "<img id='leftimg' onclick='next()' src='"+image[sixteen[0]].source+"'>";
-			right.innerHTML = "<img id='rightimg' onclick='next2()' src='"+image[sixteen[1]].source+"'>";
-			document.getElementById("leftName").innerHTML = image[sixteen[0]].name;
-			document.getElementById("rightName").innerHTML = image[sixteen[1]].name;
+			left.innerHTML = "<img id='leftimg' onclick='next()' src='img/"+image[sixteen[0]].source+"'>";
+			right.innerHTML = "<img id='rightimg' onclick='next2()' src='img/"+image[sixteen[1]].source+"'>";
+			document.getElementById("leftName").innerHTML = tname[image[sixteen[0]].name];
+			document.getElementById("rightName").innerHTML = tname[image[sixteen[1]].name];
 			document.getElementById("round").textContent = "16강 1/8";
 			return;
 		}
@@ -157,10 +162,10 @@
 		
 		document.getElementById("round").textContent = "32강 "+(current+1)+"/16";
 		
-		left.innerHTML = "<img id='leftimg' onclick='sixteenf()' src='"+image[current*2].source+"'>";
-		right.innerHTML = "<img id='rightimg' onclick='sixteen2()' src='"+image[current*2+1].source+"'>";
-		document.getElementById("leftName").innerHTML = image[current*2].name;
-		document.getElementById("rightName").innerHTML = image[current*2+1].name;
+		left.innerHTML = "<img id='leftimg' onclick='sixteenf()' src='img/"+image[current*2].source+"'>";
+		right.innerHTML = "<img id='rightimg' onclick='sixteen2()' src='img/"+image[current*2+1].source+"'>";
+		document.getElementById("leftName").innerHTML = tname[image[current*2].name];
+		document.getElementById("rightName").innerHTML = tname[image[current*2+1].name];
 	}
 	function next(){
 		var left = document.getElementById("left");
@@ -169,10 +174,10 @@
 		
 		if(sixteenIndex == 7){
 			eight[sixteenIndex] = sixteenIndex*2;
-			left.innerHTML = "<img id='leftimg' onclick='eightFinal()' src='"+image[eight[0]].source+"'>";
-			right.innerHTML = "<img id='rightimg' onclick='eightFinal2()' src='"+image[eight[1]].source+"'>";
-			document.getElementById("leftName").innerHTML = image[eight[0]].name;
-			document.getElementById("rightName").innerHTML = image[eight[1]].name;
+			left.innerHTML = "<img id='leftimg' onclick='eightFinal()' src='img/"+image[eight[0]].source+"'>";
+			right.innerHTML = "<img id='rightimg' onclick='eightFinal2()' src='img/"+image[eight[1]].source+"'>";
+			document.getElementById("leftName").innerHTML = tname[image[eight[0]].name];
+			document.getElementById("rightName").innerHTML = tname[image[eight[1]].name];
 			document.getElementById("round").textContent = "8강 1/4";
 			return;
 		}
@@ -184,10 +189,10 @@
 		document.getElementById("round").textContent = "16강 "+(sixteenIndex+1)+"/8";
 		
 		
-		left.innerHTML = "<img id='leftimg' onclick='next()' src='"+image[sixteen[sixteenIndex*2]].source+"'>";
-		right.innerHTML = "<img id='rightimg' onclick='next2()' src='"+image[sixteen[sixteenIndex*2+1]].source+"'>";
-		document.getElementById("leftName").innerHTML = image[sixteen[sixteenIndex*2]].name;
-		document.getElementById("rightName").innerHTML = image[sixteen[sixteenIndex*2+1]].name;
+		left.innerHTML = "<img id='leftimg' onclick='next()' src='img/"+image[sixteen[sixteenIndex*2]].source+"'>";
+		right.innerHTML = "<img id='rightimg' onclick='next2()' src='img/"+image[sixteen[sixteenIndex*2+1]].source+"'>";
+		document.getElementById("leftName").innerHTML = tname[image[sixteen[sixteenIndex*2]].name];
+		document.getElementById("rightName").innerHTML = tname[image[sixteen[sixteenIndex*2+1]].name];
 	}
 	function next2(){
 		var left = document.getElementById("left");
@@ -196,10 +201,10 @@
 		
 		if(sixteenIndex == 7){
 			eight[sixteenIndex] = sixteenIndex*2+1;
-			left.innerHTML = "<img id='leftimg' onclick='eightFinal()' src='"+image[eight[0]].source+"'>";
-			right.innerHTML = "<img id='rightimg' onclick='eightFinal2()' src='"+image[eight[1]].source+"'>";
-			document.getElementById("leftName").innerHTML = image[eight[0]].name;
-			document.getElementById("rightName").innerHTML = image[eight[1]].name;
+			left.innerHTML = "<img id='leftimg' onclick='eightFinal()' src='img/"+image[eight[0]].source+"'>";
+			right.innerHTML = "<img id='rightimg' onclick='eightFinal2()' src='img/"+image[eight[1]].source+"'>";
+			document.getElementById("leftName").innerHTML = tname[image[eight[0]].name];
+			document.getElementById("rightName").innerHTML = tname[image[eight[1]].name];
 			document.getElementById("round").textContent = "8강 1/4";
 			return;
 		}
@@ -209,10 +214,10 @@
 		
 		document.getElementById("round").textContent = "16강 "+(sixteenIndex+1)+"/8";
 		
-		left.innerHTML = "<img id='leftimg' onclick='next()' src='"+image[sixteen[sixteenIndex*2]].source+"'>";
-		right.innerHTML = "<img id='rightimg' onclick='next2()' src='"+image[sixteen[sixteenIndex*2+1]].source+"'>";
-		document.getElementById("leftName").innerHTML = image[sixteen[sixteenIndex*2]].name;
-		document.getElementById("rightName").innerHTML = image[sixteen[sixteenIndex*2+1]].name;
+		left.innerHTML = "<img id='leftimg' onclick='next()' src='img/"+image[sixteen[sixteenIndex*2]].source+"'>";
+		right.innerHTML = "<img id='rightimg' onclick='next2()' src='img/"+image[sixteen[sixteenIndex*2+1]].source+"'>";
+		document.getElementById("leftName").innerHTML = tname[image[sixteen[sixteenIndex*2]].name];
+		document.getElementById("rightName").innerHTML = tname[image[sixteen[sixteenIndex*2+1]].name];
 	}
 	function eightFinal(flag){
 		var left = document.getElementById("left");
@@ -220,10 +225,10 @@
 					
 		if(eightIndex==3){
 			four[eightIndex]=eight[eightIndex*2];
-			left.innerHTML = "<img id='leftimg' onclick='semiFinal()' src='"+image[four[0]].source+"'>";
-			right.innerHTML = "<img id='rightimg' onclick='semiFinal2()' src='"+image[four[1]].source+"'>";
-			document.getElementById("leftName").innerHTML = image[four[0]].name;
-			document.getElementById("rightName").innerHTML = image[four[1]].name;
+			left.innerHTML = "<img id='leftimg' onclick='semiFinal()' src='img/"+image[four[0]].source+"'>";
+			right.innerHTML = "<img id='rightimg' onclick='semiFinal2()' src='img/"+image[four[1]].source+"'>";
+			document.getElementById("leftName").innerHTML = tname[image[four[0]].name];
+			document.getElementById("rightName").innerHTML = tname[image[four[1]].name];
 			document.getElementById("round").textContent = "4강 1/2";
 	
 			return;
@@ -234,10 +239,10 @@
 		
 		document.getElementById("round").textContent = "8강 "+(eightIndex+1)+"/4";
 		
-		left.innerHTML = "<img id='leftimg' onclick='eightFinal()' src='"+image[eight[eightIndex*2]].source+"'>";
-		right.innerHTML = "<img id='rightimg' onclick='eightFinal2()' src='"+image[eight[eightIndex*2+1]].source+"'>";
-		document.getElementById("leftName").innerHTML = image[eight[eightIndex*2]].name;
-		document.getElementById("rightName").innerHTML = image[eight[eightIndex*2+1]].name;
+		left.innerHTML = "<img id='leftimg' onclick='eightFinal()' src='img/"+image[eight[eightIndex*2]].source+"'>";
+		right.innerHTML = "<img id='rightimg' onclick='eightFinal2()' src='img/"+image[eight[eightIndex*2+1]].source+"'>";
+		document.getElementById("leftName").innerHTML = tname[image[eight[eightIndex*2]].name];
+		document.getElementById("rightName").innerHTML = tname[image[eight[eightIndex*2+1]].name];
 		
 	}
 	function eightFinal2(flag){
@@ -247,10 +252,10 @@
 		
 		if(eightIndex==3){
 			four[eightIndex]=eight[eightIndex*2+1];
-			left.innerHTML = "<img id='leftimg' onclick='semiFinal()' src='"+image[four[0]].source+"'>";
-			right.innerHTML = "<img id='rightimg' onclick='semiFinal2()' src='"+image[four[1]].source+"'>";
-			document.getElementById("leftName").innerHTML = image[four[0]].name;
-			document.getElementById("rightName").innerHTML = image[four[1]].name;
+			left.innerHTML = "<img id='leftimg' onclick='semiFinal()' src='img/"+image[four[0]].source+"'>";
+			right.innerHTML = "<img id='rightimg' onclick='semiFinal2()' src='img/"+image[four[1]].source+"'>";
+			document.getElementById("leftName").innerHTML = tname[image[four[0]].name];
+			document.getElementById("rightName").innerHTML = tname[image[four[1]].name];
 			document.getElementById("round").textContent = "4강 1/2";
 			
 			return;
@@ -261,10 +266,10 @@
 		
 		document.getElementById("round").textContent = "8강 "+(eightIndex+1)+"/4";
 		
-		left.innerHTML = "<img id='leftimg' onclick='eightFinal()' src='"+image[eight[eightIndex*2]].source+"'>";
-		right.innerHTML = "<img id='rightimg' onclick='eightFinal2()' src='"+image[eight[eightIndex*2+1]].source+"'>";
-		document.getElementById("leftName").innerHTML = image[eight[eightIndex*2]].name;
-		document.getElementById("rightName").innerHTML = image[eight[eightIndex*2+1]].name;
+		left.innerHTML = "<img id='leftimg' onclick='eightFinal()' src='img/"+image[eight[eightIndex*2]].source+"'>";
+		right.innerHTML = "<img id='rightimg' onclick='eightFinal2()' src='img/"+image[eight[eightIndex*2+1]].source+"'>";
+		document.getElementById("leftName").innerHTML = tname[image[eight[eightIndex*2]].name];
+		document.getElementById("rightName").innerHTML = tname[image[eight[eightIndex*2+1]].name];
 	}
 	function semiFinal(flag){
 		var left = document.getElementById("left");
@@ -275,10 +280,10 @@
 		if(fourIndex==1){
 			two[fourIndex]=four[fourIndex*2];
 			document.getElementById("round").textContent = "결승";
-			left.innerHTML = "<img id='leftimg' onclick='Final(0)' src='"+image[two[0]].source+"'>";
-			right.innerHTML = "<img id='rightimg' onclick='Final(1)' src='"+image[two[1]].source+"'>";
-			document.getElementById("leftName").innerHTML = image[two[0]].name;
-			document.getElementById("rightName").innerHTML = image[two[1]].name;
+			left.innerHTML = "<img id='leftimg' onclick='Final(0)' src='img/"+image[two[0]].source+"'>";
+			right.innerHTML = "<img id='rightimg' onclick='Final(1)' src='img/"+image[two[1]].source+"'>";
+			document.getElementById("leftName").innerHTML = tname[image[two[0]].name];
+			document.getElementById("rightName").innerHTML = tname[image[two[1]].name];
 			return;
 		}
 		
@@ -287,10 +292,10 @@
 		
 		document.getElementById("round").textContent = "4강 2/2";
 		
-		left.innerHTML = "<img id='leftimg' onclick='semiFinal()' src='"+image[four[fourIndex*2]].source+"'>";
-		right.innerHTML = "<img id='rightimg' onclick='semiFinal2()' src='"+image[four[fourIndex*2+1]].source+"'>";
-		document.getElementById("leftName").innerHTML = image[four[fourIndex*2]].name;
-		document.getElementById("rightName").innerHTML = image[four[fourIndex*2+1]].name;
+		left.innerHTML = "<img id='leftimg' onclick='semiFinal()' src='img/"+image[four[fourIndex*2]].source+"'>";
+		right.innerHTML = "<img id='rightimg' onclick='semiFinal2()' src='img/"+image[four[fourIndex*2+1]].source+"'>";
+		document.getElementById("leftName").innerHTML = tname[image[four[fourIndex*2]].name];
+		document.getElementById("rightName").innerHTML = tname[image[four[fourIndex*2+1]].name];
 	}
 	function semiFinal2(flag){
 		var left = document.getElementById("left");
@@ -301,10 +306,10 @@
 		if(fourIndex==1){
 			two[fourIndex]=four[fourIndex*2+1];
 			document.getElementById("round").textContent = "결승";
-			left.innerHTML = "<img id='leftimg' onclick='Final(0)' src='"+image[two[0]].source+"'>";
-			right.innerHTML = "<img id='rightimg' onclick='Final(1)' src='"+image[two[1]].source+"'>";
-			document.getElementById("leftName").innerHTML = image[two[0]].name;
-			document.getElementById("rightName").innerHTML = image[two[1]].name;
+			left.innerHTML = "<img id='leftimg' onclick='Final(0)' src='img/"+image[two[0]].source+"'>";
+			right.innerHTML = "<img id='rightimg' onclick='Final(1)' src='img/"+image[two[1]].source+"'>";
+			document.getElementById("leftName").innerHTML = tname[image[two[0]].name];
+			document.getElementById("rightName").innerHTML = tname[image[two[1]].name];
 			return;
 		}
 		
@@ -313,19 +318,19 @@
 		
 		document.getElementById("round").textContent = "4강 2/2";
 		
-		left.innerHTML = "<img id='leftimg' onclick='semiFinal()' src='"+image[four[fourIndex*2]].source+"'>";
-		right.innerHTML = "<img id='rightimg' onclick='semiFinal2()' src='"+image[four[fourIndex*2+1]].source+"'>";
-		document.getElementById("leftName").innerHTML = image[four[fourIndex*2]].name;
-		document.getElementById("rightName").innerHTML = image[four[fourIndex*2+1]].name;
+		left.innerHTML = "<img id='leftimg' onclick='semiFinal()' src='img/"+image[four[fourIndex*2]].source+"'>";
+		right.innerHTML = "<img id='rightimg' onclick='semiFinal2()' src='img/"+image[four[fourIndex*2+1]].source+"'>";
+		document.getElementById("leftName").innerHTML = tname[image[four[fourIndex*2]].name];
+		document.getElementById("rightName").innerHTML = tname[image[four[fourIndex*2+1]].name];
 	}
 	function Final(num){
 		document.getElementById("leftName").innerHTML=" ";
 		document.getElementById("rightName").innerHTML=" ";
-		document.getElementById("round").innerHTML = "우승 "+image[two[num]].name;
+		document.getElementById("round").innerHTML = "우승 "+tname[image[two[num]].name];
 		
 		document.getElementById("left").innerHTML=" ";
-		document.getElementById("right").innerHTML=" ";
-		document.getElementById("divVS").innerHTML="<img id='rightimg' src='"+image[two[num]].source+"'>";
+		document.getElementById("right").innerHTML="<form action='result_02.jsp' id='"+tname[image[two[num]].name]+"' method='post'><input type='submit' value='정보보러가기'></form>";
+		document.getElementById("divVS").innerHTML="<img id='rightimg' src='img/"+image[two[num]].source+"'>";
 	}
 	</script>
 </body>

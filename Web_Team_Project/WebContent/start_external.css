@@ -1,0 +1,58 @@
+@charset "EUC-KR";
+#round{
+			text-align:center;
+			font-size: 25px;
+		}
+		#leftName{
+			text-align:center;
+			font-size: 30px;
+		}
+		#rightName{
+			text-align:center;
+			font-size: 30px;
+		}
+		.cleft {
+			float: left;
+			width:35%;
+			box-sizing: border-box;
+		}
+		.cleft:hover{
+			opacity:0.5;
+		}
+		.cmiddle{
+			float: left;
+			margin-left:10%;
+			width:14%;
+			box-sizing: border-box;
+		}
+		.cright {
+			float: right;
+			width:35%;
+			box-sizing: border-box;
+		}
+		.cright:hover{
+			opacity:0.5;
+		}
+		.main{
+			width: 84%;
+			margin: 10px auto;
+		}
+		div {
+			text-align:center;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+		body{
+			background-color:skyblue;
+		}
+		#cont{
+			position:absolute;
+			background-color:white;
+			top:5%;
+			left:5%;
+			width:90%;
+			height:auto;
+			color:skyblue;
+		}

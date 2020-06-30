@@ -8,8 +8,6 @@
 <link type="text/css" rel="stylesheet" href="start_external.css"></link>
 </head>
 <body>
-<%@ include file="dbconn.jsp" %>
-
 <div id = "cont">
 		<div class="main">
 			<div id = "leftName" class = "cleft"></div>
@@ -25,7 +23,20 @@
 			<div id = "winner"></div>
 		</div>
 	</div>
+<%@ include file="dbconn.jsp" %>
+<%
+	Statement stmt = conn.createStatement();
+	String sql = "SELECT name FROM Locate";
 	
+	ResultSet rs = stmt.executeQuery(sql);
+	String[] name=new String[32];
+	int i=0;
+	while(rs.next()){
+		name[i]=rs.getString(i);
+	}
+	
+	conn.close();
+%>
 	<script>
 	var image=[];
 	var imageSet=[

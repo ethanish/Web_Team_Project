@@ -3,7 +3,7 @@ package db;
 import java.sql.*;
 
 public class DB_Connection {
-	public static Connection getCon() throws SQLException{
+	public static Connection get_connection() throws SQLException{
 		Connection conn = null;
 		try {
 			String url = "jdbc:mysql://localhost:3306/LOGDATA?serverTimezone=UTC";

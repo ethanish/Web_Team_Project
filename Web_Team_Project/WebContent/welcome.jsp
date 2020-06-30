@@ -9,7 +9,7 @@
 </head>
 <body>
 <%
-	db.DB_Connection.getCon();	
+	db.DB_Connection.get_connection();
 %>
 </body>
 </html>

@@ -21,7 +21,7 @@
 </head>	
 <body>
 	<h1 style="font-family: impact;">
-		<span class="mainlink" onclick="location.href='main.html'"> gotomain </span>
+		<span class="mainlink" onclick="location.href='main.jsp'"> gotomain </span>
 	</h1>
 	<h2>회원가입</h2>
 	
@@ -55,6 +55,6 @@
 	</form>
 	
 	<button type="button" class="nabyBtn"
-		onClick="location.href='main.html'">메인 페이지</button>
+		onClick="location.href='main.jsp'">메인 페이지</button>
 </body>
 </html>

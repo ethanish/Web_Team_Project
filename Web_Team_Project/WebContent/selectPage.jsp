@@ -5,25 +5,8 @@
 <head>
 <meta charset="EUC-KR">
 <title>여행지 추천 사이트</title>
-
+<link href="font.css" rel="stylesheet">
 <style type="text/css">
-@font-face {
-
-	font-family: 'photoF';
-	src: url(PhotoFont.ttf);
-}
-
-@font-face {
-	font-family: 'rocatF';
-	src: url(rocatFont.ttf);
-}
-
-@font-face {
-	font-family: 'fireF';
-	src: url(fireFont.ttf);
-	font-color : #58ACF;
-}
-
 .button1 {
 	width: 100px;
 	background-color: #F33131;
@@ -58,12 +41,13 @@
 
 </head>
 <body>
+	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
+	</h1>
 	<%
 		String id = (String)session.getAttribute("uID");
 	%>
-	<h1 style="font-family: impact; position: fixed; left: 20px; top: 0px;">
-		<span class="mainlink" onclick="location.href='selectPage.jsp'"> main </span>
-	</h1>
+	
 	
 	<div style="width : 50%;float:left;box-sizing:border-box;border:1px solid #000;">
 	<div style="text-align: center;">

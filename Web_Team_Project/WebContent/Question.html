@@ -3,33 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>당신과 성향이 맞는 여행지는?</title>
-
+<link href="font.css" rel="stylesheet">
 <style>
-@font-face {
-	font-family: 'photoF';
-	src: url(PhotoFont.ttf);
-}
-
-@font-face {
-	font-family: 'photoF3';
-	src: url(photoFont3.ttf);
-}
-
-@font-face {
-	font-family: 'photoF1';
-	src: url(photoFont1.ttf);
-}
-
-@font-face {
-	font-family: 'rocatF';
-	src: url(rocatFont.ttf);
-}
-
-@font-face {
-	font-family: 'fireF';
-	src: url(fireFont.ttf);
-}
-
 div.testname {
 	line-height: 10em;
 }
@@ -78,7 +53,9 @@ input[type="radio"]:checked+label span {
 </style>
 </head>
 <body>
-
+	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
+	</h1>
 	<form name="test" action="result_01.jsp" method="post">
 		<div style="text-align: center;">
 			<div class="testname"

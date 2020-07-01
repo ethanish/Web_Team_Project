@@ -6,9 +6,13 @@
 <meta charset="EUC-KR">
 <title>이상형 월드컵</title>
 <link type="text/css" rel="stylesheet" href="start_external.css"></link>
+<link href="font.css" rel="stylesheet">
 </head>
 <body>
-<div id = "cont">
+	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
+	</h1>
+	<div id = "cont">
 		<div class="main">
 			<div id = "leftName" class = "cleft"></div>
 			<div id = "round" class = "cmiddle">32강 1/16</div>

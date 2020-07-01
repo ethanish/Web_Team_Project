@@ -6,37 +6,8 @@
 <head>
 <meta charset="utf-8">
 <title>당신과 성향이 맞는 여행지는?</title>
+<link href="font.css" rel="stylesheet">
 <style>
-@font-face {
-	font-family: 'photoF';
-	src: url(PhotoFont.ttf);
-}
-
-@font-face {
-	font-family: 'photoF3';
-	src: url(photoFont3.ttf);
-}
-
-@font-face {
-	font-family: 'photoF1';
-	src: url(photoFont1.ttf);
-}
-
-@font-face {
-	font-family: 'rocatF';
-	src: url(rocatFont.ttf);
-}
-
-@font-face {
-	font-family: 'fireF';
-	src: url(fireFont.ttf);
-}
-
-@font-face {
-	font-family: 'photoF2';
-	src: url(photoFont2.ttf);
-}
-
 #dogname{
 line-height:5em; 
 font-family: photoF3;
@@ -56,7 +27,9 @@ font-family: photoF3;
 </head>
 <%@ include file="dbconn.jsp" %>
 <body>
-
+	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
+	</h1>
 	<script>
 	<!-- NumQ1 : 시끄러운 곳, 조용한 곳 / NumQ2 : 물, 물X / NumQ3 : 친구, 커플 / NumQ4 : 친화성 지수 / NumNeur : 신경성 지수-->
 		var NumQ1 = 0, NumQ2 = 0, NumQ3 = 0, NumQ4 = 0, NumQ5 = 0;

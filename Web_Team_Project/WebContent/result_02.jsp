@@ -5,37 +5,8 @@
 <head>
 <meta charset="utf-8">
 <title>당신이 뽑은 여행지는?</title>
+<link href="font.css" rel="stylesheet">
 <style>
-@font-face {
-   font-family: 'photoF';
-   src: url(PhotoFont.ttf);
-}
-
-@font-face {
-   font-family: 'photoF3';
-   src: url(photoFont3.ttf);
-}
-
-@font-face {
-   font-family: 'photoF1';
-   src: url(photoFont1.ttf);
-}
-
-@font-face {
-   font-family: 'rocatF';
-   src: url(rocatFont.ttf);
-}
-
-@font-face {
-   font-family: 'fireF';
-   src: url(fireFont.ttf);
-}
-
-@font-face {
-   font-family: 'photoF2';
-   src: url(photoFont2.ttf);
-}
-
 #dogname{
 line-height:5em; 
 font-family: photoF3;
@@ -54,6 +25,9 @@ font-family: photoF3;
 </style>
 </head>
 <body>
+	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
+	</h1>
 	<%@ include file="dbconn.jsp" %>
 	<%	
 		Statement stmt = conn.createStatement();

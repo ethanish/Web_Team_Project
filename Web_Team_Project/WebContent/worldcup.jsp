@@ -349,7 +349,7 @@
 		document.getElementById("round").innerHTML = " "
 		
 		document.getElementById("left").innerHTML="<img id='rightimg' width='400' height='300' src='img//"+image[two[num]].source+"'>";
-		document.getElementById("right").innerHTML="<form action='result_02.jsp' method='post'><input type='hidden' value='"+index+"' name='tname'><input class='button1' type='submit' value='여행지 정보'></form>";
+		document.getElementById("right").innerHTML="<form action='result_02.jsp' method='post'><input type='hidden' value='"+index+"' name='tname'><input style='font-family: photoF;' class='button1' type='submit' value='여행지 정보'></form>";
 		document.getElementById("divVS").innerHTML=" ";
 	}
 	</script>

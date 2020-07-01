@@ -5,27 +5,108 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>방명록:작성화면</title>
+<link href="font.css" rel="stylesheet">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+.login {
+   width: 400px;
+   margin: 16px auto;
+   font-size: 16px;
+}
+
+.login-header, .login p {
+   margin-top: 0;
+   margin-bottom: 0;
+}
+
+.login-triangle {
+   width: 0;
+   margin-right: auto;
+   margin-left: auto;
+   border: 12px solid transparent;
+   border-bottom-color: #28d;
+}
+
+.login-header {
+   background: #28d;
+   padding: 20px;
+   font-size: 1.4em;
+   font-weight: normal;
+   text-align: center;
+   text-transform: uppercase;
+   color: #fff;
+}
+
+.login-container {
+   border:1px solid #000;
+   padding: 12px;
+}
+
+.login p {
+   padding: 12px;
+}
+
+.login input {
+   box-sizing: border-box;
+   display: block;
+   width: 100%;
+   border-width: 1px;
+   border-style: solid;
+   padding: 16px;
+   outline: 0;
+   font-family: inherit;
+   font-size: 0.95em;
+}
+
+.login input[type="email"], .login input[type="password"] {
+   background: #fff;
+   border-color: #bbb;
+   color: #555;
+}
+
+.login input[type="email"]:focus, .login input[type="password"]:focus {
+   border-color: #888;
+}
+
+.login input[type="submit"] {
+   background: #28d;
+   border-color: transparent;
+   color: #fff;
+   cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+   background: #17c;
+}
+
+.login input[type="submit"]:focus {
+   border-color: #05a;
+}
+</style>
 </head>
 <body>
 	<center>
-		<h2>방명록:작성화면</h2>
+		<h2 style="font-family: photoF;">방명록:작성화면</h2>
 		<hr>
-		[<a href=guestbook_control.jsp?action=list>게시물목록으로</a>]
-		<form name=form1 method=post action=guestbook_control.jsp>
-			<input type=hidden name="action" value="insert">
-			<table cellpadding=5 cellspacing=0 border="1">
+		<a style="font-family: photoF;" href=guestbook_control.jsp?action=list>게시물목록으로</a>
+		<div class="login">
+		<form class="login-container" name=form1 method=post action=guestbook_control.jsp>
+			<input style="font-family: photoF;" type=hidden name="action" value="insert">
+			<table cellpadding=5 cellspacing=0>
 				<tr>
-					<td bgcolor="#99CCFF">제목</td>
-					<td><input type="text" name="gb_title" size="20"></td>
+					<td style="font-family: photoF;" bgcolor="#99CCFF">제목</td>
+					<td><input style="font-family: photoF;" type="text" name="gb_title" size="20"></td>
 				</tr>
 				<tr>
-					<td colspan="2"><textarea rows="5" name="gb_contents" cols="40"></textarea></td>
+					<td style="font-family: photoF;" colspan="2"><textarea rows="5" name="gb_contents" cols="40"></textarea></td>
 				</tr>
 				<tr>
-					<td colspan="2" align=center><input type=submit value="저장"><input type=reset value="취소"></td>
+					<td style="font-family: photoF;" colspan="2" align=center><input style="font-family: photoF;" type=submit value="저장"><input type=reset value="취소"></td>
 				</tr>
 			</table>
 		</form>
+		</div>
 	</center>
 	
 </body>

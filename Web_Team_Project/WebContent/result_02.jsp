@@ -50,7 +50,20 @@ font-family: photoF3;
    font-family:photoF1;
    font-size:15px;
 }
-
+.button1 {
+	width: 100px;
+	background-color: #F33131;
+	border: none;
+	color: #fff;
+	padding: 15px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 30px;
+	margin: 4px;
+	cursor: pointer;
+	border-radius: 10px;
+}
 </style>
 </head>
 <body>
@@ -87,7 +100,7 @@ font-family: photoF3;
 			var num = <%=num%>;
 			document.write("<img style='border: 2px solid black;border-radius: 70px;-moz-border-radius: 70px;-khtml-border-radius: 70px;-webkit-border-radius: 70px;' src='img/"+num+".jpg' width='256' height='170' />");
 			var desc = "<%=desc%>";
-			document.write("<div id='info'> <br><br>"+desc+"<br><br><button onClick='location.href=\"guestbook_form.jsp\"'>방명록쓰기</button><br><br></div>");
+			document.write("<div id='info'> <br><br>"+desc+"<br><br><button style='font-family: fireF;' class='button1' onClick='location.href=\"guestbook_form.jsp\"'>방명록쓰기</button><br><br></div>");
 				
 			
 			

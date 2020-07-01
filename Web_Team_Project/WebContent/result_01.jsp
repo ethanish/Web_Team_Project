@@ -22,7 +22,20 @@ font-family: photoF3;
 	font-family:photoF1;
 	font-size:15px;
 }
-
+.button2 {
+	width: 100px;
+	background-color: #58ACFA;
+	border: none;
+	color: #fff;
+	padding: 15px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 30px;
+	margin: 4px;
+	cursor: pointer;
+	border-radius: 10px;
+}
 </style>
 </head>
 <%@ include file="dbconn.jsp" %>
@@ -208,7 +221,7 @@ font-family: photoF3;
 			var resultn = '<%=index%>';
 			document.write("<img style='border: 2px solid black;border-radius: 70px;-moz-border-radius: 70px;-khtml-border-radius: 70px;-webkit-border-radius: 70px;' src='img/"+resultn+".jpg' width='256' height='170' />");
 			var description = '<%=temp2%>';
-			document.write("<div id='info'> <br><br>"+description+"<br><br><button onClick='location.href=\"guestbook_form.jsp\"'>방명록쓰기</button><br><br></div>");
+			document.write("<div id='info'> <br><br>"+description+"<br><br><button style='font-family: fireF;'class='button2' onClick='location.href=\"guestbook_form.jsp\"'>방명록쓰기</button><br><br></div>");
 			
 			
 			document.write("</div>");

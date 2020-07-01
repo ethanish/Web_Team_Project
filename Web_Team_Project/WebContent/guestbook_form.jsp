@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"
-	errorPage="guestbook_error.jsp"%>
+   errorPage="guestbook_error.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,31 +83,46 @@
 .login input[type="submit"]:focus {
    border-color: #05a;
 }
+
+.login input[type="reset"] {
+   background: #58D3F7;
+   border-color: transparent;
+   color: #fff;
+   cursor: pointer;
+}
+
+.login input[type="reset"]:hover {
+   background: #17c;
+}
+
+.login input[type="reset"]:focus {
+   border-color: #05a;
+}
 </style>
 </head>
 <body>
-	<center>
-		<h2 style="font-family: photoF;">방명록:작성화면</h2>
-		<hr>
-		<a style="font-family: photoF;" href=guestbook_control.jsp?action=list>게시물목록으로</a>
-		<div class="login">
-		<form class="login-container" name=form1 method=post action=guestbook_control.jsp>
-			<input style="font-family: photoF;" type=hidden name="action" value="insert">
-			<table cellpadding=5 cellspacing=0>
-				<tr>
-					<td style="font-family: photoF;" bgcolor="#99CCFF">제목</td>
-					<td><input style="font-family: photoF;" type="text" name="gb_title" size="20"></td>
-				</tr>
-				<tr>
-					<td style="font-family: photoF;" colspan="2"><textarea rows="5" name="gb_contents" cols="40"></textarea></td>
-				</tr>
-				<tr>
-					<td style="font-family: photoF;" colspan="2" align=center><input style="font-family: photoF;" type=submit value="저장"><input type=reset value="취소"></td>
-				</tr>
-			</table>
-		</form>
-		</div>
-	</center>
-	
+   <center>
+      <h2 style="font-family: photoF; line-height: 5em; color:#28d" >방명록</h2>
+      
+      <div class="login">
+      <form class="login-container" name=form1 method=post action=guestbook_control.jsp>
+         <input style="font-family: photoF;" type=hidden name="action" value="insert">
+         <table cellpadding=5 cellspacing=0 frame="void">
+            <tr>
+               <td><input style="font-family: photoF;" type="text" name="gb_title" size="20" placeholder="제목"></td>
+            </tr>
+            <tr>
+               <td style="font-family: photoF;" colspan="2"><textarea style="font-family: photoF;" rows="5" name="gb_contents" cols="40" placeholder="내용"></textarea></td>
+            </tr>
+            <tr>
+               <td style="font-family: photoF;" colspan="2" align=center><input style="font-family: photoF;" type=submit value="저장"></td>
+            </tr>
+         </table>
+      </form>
+      </div>
+
+      <a style="font-family: photoF; line-height: 4em;" href=guestbook_control.jsp?action=list>게시물목록으로</a>
+   </center>
+   
 </body>
 </html>

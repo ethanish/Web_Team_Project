@@ -6,8 +6,12 @@
 <meta charset="EUC-KR">
 <title>이상형 월드컵</title>
 <link type="text/css" rel="stylesheet" href="start_external.css"></link>
+<link href="font.css" rel="stylesheet">
 </head>
 <body>
+	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
+	</h1>
 	<div style="color:#F33131; font-size: 50px; font-family: photoF;text-align: center; margin:0 auto;left:0;right:0; width:200px;height:120px;" id = "round" class = "cmiddle">
 	32강 1/16
 	</div>
@@ -340,13 +344,13 @@
 			if(oriname[i]==tname[image[two[num]].name])
 				index=i;
 		}
-		document.getElementById("leftName").innerHTML=" ";
+		document.getElementById("leftName").innerHTML="우승 "+tname[image[two[num]].name];
 		document.getElementById("rightName").innerHTML=" ";
-		document.getElementById("round").innerHTML = "우승 "+tname[image[two[num]].name];
+		document.getElementById("round").innerHTML = " "
 		
-		document.getElementById("left").innerHTML=" ";
-		document.getElementById("right").innerHTML="<form action='result_02.jsp' method='post'><input type='hidden' value='"+index+"' name='tname'><input type='submit' value='정보보러가기'></form>";
-		document.getElementById("divVS").innerHTML="<img id='rightimg' width='400' height='300' src='img//"+image[two[num]].source+"'>";
+		document.getElementById("left").innerHTML="<img id='rightimg' width='400' height='300' src='img//"+image[two[num]].source+"'>";
+		document.getElementById("right").innerHTML="<form action='result_02.jsp' method='post'><input type='hidden' value='"+index+"' name='tname'><input class='button1' type='submit' value='여행지 정보'></form>";
+		document.getElementById("divVS").innerHTML=" ";
 	}
 	</script>
 </body>

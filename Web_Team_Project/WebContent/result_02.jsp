@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>당신이 뽑은 여행지는?</title>
+<link href="font.css" rel="stylesheet">
 <style>
 @font-face {
    font-family: 'photoF';
@@ -35,7 +36,6 @@
    font-family: 'photoF2';
    src: url(photoFont2.ttf);
 }
-
 #dogname{
 line-height:5em; 
 font-family: photoF3;
@@ -54,6 +54,9 @@ font-family: photoF3;
 </style>
 </head>
 <body>
+	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
+	</h1>
 	<%@ include file="dbconn.jsp" %>
 	<%	
 		Statement stmt = conn.createStatement();
@@ -75,7 +78,7 @@ font-family: photoF3;
 	%>
 	<script>
 
-			document.write("<div style='line-height: 7em; font-family: fireF; font-size: 35px; text-align: center; color:#58ACFA;'>당신이 뽑은 여행지는?</div><div style='text-align: center;'>");
+			document.write("<div style='line-height: 7em; font-family: fireF; font-size: 35px; text-align: center; color:#F33131;'>당신이 뽑은 여행지는?</div><div style='text-align: center;'>");
 			
 			var name = "<%=tname%>";
 			document.write("<div id='dogname'>"+name +"</div>");

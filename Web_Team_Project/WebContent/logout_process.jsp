@@ -6,5 +6,5 @@
 	session.invalidate();
 %>
 <script type="text/javascript">
-	location.href='main.jsp';
+	location.href='selectPage.jsp';
 </script>

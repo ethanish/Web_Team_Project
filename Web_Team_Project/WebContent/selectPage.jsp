@@ -80,7 +80,7 @@
 					START</button>
 			</div>
 		</div>
-		
+		 
 	
 	<div style="width : 50%; float:right;">
 		<div style="text-align: center;">

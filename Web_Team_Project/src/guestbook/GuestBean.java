@@ -14,7 +14,7 @@ public class GuestBean
 	{
 		try {
 			Class.forName(jdbc_driver);
-			conn = DriverManager.getConnection(jdbc_url, "root", "1004");
+			conn = DriverManager.getConnection(jdbc_url, "root", "1234");
 		} catch(Exception e) {
 			System.out.println("SQL_Error:"+e.getMessage());
 		}

@@ -104,6 +104,9 @@
       ArrayList datas = gb.getDBList();
    %>
 <body>
+<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
+	</h1>
    <center>
       <h2 style="font-family: photoF; line-height:10em; color:#28d;">방명록:목록화면</h2>
       
@@ -138,4 +141,4 @@
    </center>
 
 </body>
-</html>s
+</html>

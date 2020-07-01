@@ -4,7 +4,7 @@
 
 	String url = "jdbc:mysql://localhost:3306/LOGDATA?serverTimezone=UTC";
 	String user = "root";
-	String password = "1004";
+	String password = "1234";
 
 	Class.forName("com.mysql.jdbc.Driver");
 	conn = DriverManager.getConnection(url, user, password);

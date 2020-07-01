@@ -291,6 +291,7 @@
       var right = document.getElementById("right");
       
 
+<<<<<<< HEAD
       
       if(fourIndex==1){
          two[fourIndex]=four[fourIndex*2];
@@ -353,5 +354,69 @@
       document.getElementById("divVS").innerHTML=" ";
    }
    </script>
+=======
+		
+		if(fourIndex==1){
+			two[fourIndex]=four[fourIndex*2];
+			document.getElementById("round").textContent = "°á½Â";
+			left.innerHTML = "<img id='leftimg' onclick='Final(0)' width='400' height='300' src='img//"+image[two[0]].source+"'>";
+			right.innerHTML = "<img id='rightimg' onclick='Final(1)' width='400' height='300' src='img//"+image[two[1]].source+"'>";
+			document.getElementById("leftName").innerHTML = tname[image[two[0]].name];
+			document.getElementById("rightName").innerHTML = tname[image[two[1]].name];
+			return;
+		}
+		
+		two[fourIndex]=four[fourIndex*2];
+		fourIndex=fourIndex+1;
+		
+		document.getElementById("round").textContent = "4°­ 2/2";
+		
+		left.innerHTML = "<img id='leftimg' onclick='semiFinal()' width='400' height='300' src='img//"+image[four[fourIndex*2]].source+"'>";
+		right.innerHTML = "<img id='rightimg' onclick='semiFinal2()' width='400' height='300' src='img//"+image[four[fourIndex*2+1]].source+"'>";
+		document.getElementById("leftName").innerHTML = tname[image[four[fourIndex*2]].name];
+		document.getElementById("rightName").innerHTML = tname[image[four[fourIndex*2+1]].name];
+	}
+	function semiFinal2(flag){
+		var left = document.getElementById("left");
+		var right = document.getElementById("right");
+		
+		
+		
+		if(fourIndex==1){
+			two[fourIndex]=four[fourIndex*2+1];
+			document.getElementById("round").textContent = "°á½Â";
+			left.innerHTML = "<img id='leftimg' onclick='Final(0)' width='400' height='300' src='img//"+image[two[0]].source+"'>";
+			right.innerHTML = "<img id='rightimg' onclick='Final(1)' width='400' height='300' src='img//"+image[two[1]].source+"'>";
+			document.getElementById("leftName").innerHTML = tname[image[two[0]].name];
+			document.getElementById("rightName").innerHTML = tname[image[two[1]].name];
+			return;
+		}
+		
+		two[fourIndex]=four[fourIndex*2+1];
+		fourIndex=fourIndex+1;
+		
+		document.getElementById("round").textContent = "4°­ 2/2";
+		
+		left.innerHTML = "<img id='leftimg' onclick='semiFinal()' width='400' height='300' src='img//"+image[four[fourIndex*2]].source+"'>";
+		right.innerHTML = "<img id='rightimg' onclick='semiFinal2()' width='400' height='300' src='img//"+image[four[fourIndex*2+1]].source+"'>";
+		document.getElementById("leftName").innerHTML = tname[image[four[fourIndex*2]].name];
+		document.getElementById("rightName").innerHTML = tname[image[four[fourIndex*2+1]].name];
+	}
+	function Final(num){
+		var index=0;
+		for(var i=0;i<31;i++){
+			if(oriname[i]==tname[image[two[num]].name])
+				index=i;
+		}
+		document.getElementById("leftName").innerHTML="¿ì½Â "+tname[image[two[num]].name];
+		document.getElementById("rightName").innerHTML=" ";
+		document.getElementById("round").innerHTML = " "
+		
+		document.getElementById("left").innerHTML="<img id='rightimg' width='400' height='300' src='img//"+image[two[num]].source+"'>";
+		document.getElementById("right").innerHTML="<form action='result_02.jsp' method='post'><input type='hidden' value='"+index+"' name='tname'><input style='font-family: photoF;' class='button1' type='submit' value='¿©ÇàÁö Á¤º¸'></form>";
+		document.getElementById("divVS").innerHTML=" ";
+	}
+	</script>
+>>>>>>> branch 'master' of https://github.com/ethanish/Web_Team_Project.git
 </body>
 </html>

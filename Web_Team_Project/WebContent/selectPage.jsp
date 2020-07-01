@@ -69,7 +69,7 @@
 	<br><br>
 	<div style="text-align: center;">
 		<button class="button1" type="button"
-			onclick="location.href='Question.html'" style="font-family: photoF">여행지 이상형 월드컵
+			onclick="location.href='worldcup.jsp'" style="font-family: photoF">여행지 이상형 월드컵
 			START</button>
 	</div>
 	</div>

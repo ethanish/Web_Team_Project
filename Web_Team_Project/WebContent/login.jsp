@@ -27,11 +27,9 @@
 
 	
 	<div align=center>
+		<h2>·Î±×ÀÎ</h2>
 		<form action="login_process.jsp" method="POST">
 			<table width="250" border="1" align="center" cellspacing="0" cellpadding="5">
-				<tr>
-					<td colspan="2" align="center">Login</td>
-				</tr>
 				<tr>
 					<td>ID</td>
 					<td><input type="text" name="id" size=10></td>
@@ -49,6 +47,5 @@
 			</table>
 		</form>
 	</div>
-	
 </body>
 </html>

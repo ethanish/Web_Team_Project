@@ -61,6 +61,9 @@
 	<%
 		String id = (String)session.getAttribute("uID");
 	%>
+	<h1 style="font-family: impact; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> main </span>
+	</h1>
 	
 	<div style="width : 50%;float:left;box-sizing:border-box;border:1px solid #000;">
 	<div style="text-align: center;">

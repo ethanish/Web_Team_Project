@@ -25,38 +25,39 @@
 	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
 		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
 	</h1>
-	<h2>회원가입</h2>
 	
-	<h4>정보를 입력해 주세요</h4>
-	
-	<form name = "userInfo" action="signin_process.jsp" method="POST" onsubmit="return checkValue()">
-		<table>
-			<tr>
-				<td>아이디(필수) :</td>
-				<td><input type="text" name="id"></td>
-			</tr>
-			<tr>
-				<td>비밀번호(필수) :</td>
-				<td><input type="text" name="password"></td>
-			</tr>
-			<tr>
-				<td>전화번호 :</td>
-				<td><input type="text" name="tel"></td>
-			</tr>
-			<tr>
-				<td>이름 :</td>
-				<td><input type="text" name="name"></td>
-			</tr>
-			<tr>
-				<td>생년월일 :</td>
-				<td><input type="date" value="2020-07-02" name="birth_d"></td>
-			</tr>
-		</table>
-		<input type="reset" name="Reset" />
-		<input type="submit" name="Submit" />
-	</form>
-	
-	<button type="button" class="nabyBtn"
-		onClick="location.href='selectPage.jsp'">메인 페이지</button>
+	<div align=center>
+		<h4>정보를 입력해 주세요</h4>
+		<form name = "userInfo" action="signin_process.jsp" method="POST" onsubmit="return checkValue()">
+			<table width="350" border="1" align="center" cellspacing="0" cellpadding="5">
+				<tr>
+					<td>아이디(필수) :</td>
+					<td><input type="text" name="id"></td>
+				</tr>
+				<tr>
+					<td>비밀번호(필수) :</td>
+					<td><input type="text" name="password"></td>
+				</tr>
+				<tr>
+					<td>전화번호 :</td>
+					<td><input type="text" name="tel"></td>
+				</tr>
+				<tr>
+					<td>이름 :</td>
+					<td><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td>생년월일 :</td>
+					<td><input type="date" value="2020-07-02" name="birth_d"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="reset" name="Reset" />
+						<input type="submit" name="Submit" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
 </body>
 </html>

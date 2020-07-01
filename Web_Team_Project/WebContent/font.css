@@ -1,0 +1,30 @@
+@charset "EUC-KR";
+@font-face {
+	font-family: 'photoF';
+	src: url(PhotoFont.ttf);
+}
+
+@font-face {
+	font-family: 'photoF3';
+	src: url(photoFont3.ttf);
+}
+
+@font-face {
+	font-family: 'photoF1';
+	src: url(photoFont1.ttf);
+}
+
+@font-face {
+	font-family: 'rocatF';
+	src: url(rocatFont.ttf);
+}
+
+@font-face {
+	font-family: 'fireF';
+	src: url(fireFont.ttf);
+}
+
+@font-face {
+	font-family: 'photoF2';
+	src: url(photoFont2.ttf);
+}

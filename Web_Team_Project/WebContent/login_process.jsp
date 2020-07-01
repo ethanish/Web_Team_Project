@@ -36,12 +36,16 @@
 			conn.close();	
 		}
 	}
-	if (check_pwd.equals(pwd)) {
+	
+	if (check_pwd != null && check_pwd.equals(pwd)) {
 		System.out.println("로그인 성공! 유저 넘버 : "+uNum+", 유저 아이디 : "+id);
 		session.setAttribute("uID",id);
 		session.setAttribute("uNum",uNum);
 	}else{
+		id = null;
 		uNum = -1;
+		session.setAttribute("uID",id);
+		session.setAttribute("uNum",uNum);
 	}
 %>
 <script type="text/javascript">
@@ -50,6 +54,6 @@ if(<%=uNum%> > -1 ){
 	location.href='main.jsp';
 }else{
 	alert("회원정보를 확인해주세요");
-	history.go(-1);
+	location.href='login.jsp';
 }
 </script>

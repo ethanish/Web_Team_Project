@@ -87,13 +87,15 @@
 </style>
 </head>
 <body>
-
+	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
+	</h1>
    <div class="login">
       <div class="login-triangle"></div>
 
       <h2 style="font-family: photoF;" class="login-header">·Î±×ÀÎ</h2>
 
-      <form class="login-container" action="login_process.jsp" method="POST">
+      <form name="userInfo" class="login-container" action="login_process.jsp" method="POST" onsubmit="return checkValue()" >
          <p>
             <input style="font-family: photoF;" type="text" name="id" placeholder="Id">
          </p>

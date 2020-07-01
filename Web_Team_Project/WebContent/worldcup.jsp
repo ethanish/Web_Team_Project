@@ -188,7 +188,7 @@
 		
 		
 		if(sixteenIndex == 7){
-			eight[sixteenIndex] = sixteenIndex*2;
+			eight[sixteenIndex] = sixteen[sixteenIndex*2];
 			left.innerHTML = "<img id='leftimg' onclick='eightFinal()' width='400' height='300' src='img//"+image[eight[0]].source+"'>";
 			right.innerHTML = "<img id='rightimg' onclick='eightFinal2()' width='400' height='300' src='img//"+image[eight[1]].source+"'>";
 			document.getElementById("leftName").innerHTML = tname[image[eight[0]].name];
@@ -198,7 +198,7 @@
 		}
 		
 		
-		eight[sixteenIndex] = sixteenIndex*2;
+		eight[sixteenIndex] = sixteen[sixteenIndex*2];
 		sixteenIndex=sixteenIndex+1;
 		
 		document.getElementById("round").textContent = "16°­ "+(sixteenIndex+1)+"/8";
@@ -215,7 +215,7 @@
 		
 		
 		if(sixteenIndex == 7){
-			eight[sixteenIndex] = sixteenIndex*2+1;
+			eight[sixteenIndex] = sixteen[sixteenIndex*2+1];
 			left.innerHTML = "<img id='leftimg' onclick='eightFinal()' width='400' height='300' src='img//"+image[eight[0]].source+"'>";
 			right.innerHTML = "<img id='rightimg' onclick='eightFinal2()' width='400' height='300' src='img//"+image[eight[1]].source+"'>";
 			document.getElementById("leftName").innerHTML = tname[image[eight[0]].name];
@@ -224,7 +224,7 @@
 			return;
 		}
 		
-		eight[sixteenIndex] = sixteenIndex*2+1;
+		eight[sixteenIndex] = sixteen[sixteenIndex*2+1];
 		sixteenIndex=sixteenIndex+1;
 		
 		document.getElementById("round").textContent = "16°­ "+(sixteenIndex+1)+"/8";

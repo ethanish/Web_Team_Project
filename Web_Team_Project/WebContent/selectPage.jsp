@@ -96,10 +96,13 @@
 		</div>
 	</div>
 	
-	<div style="font-family: photoF;text-align: center;position:fixed; margin:0 auto; right : 20px; top: 10px; width:100px;height:50px;background-color:white;">
-		<div>	
-		<span id="signin"></span>	
-		<span id="login"></span>
+	<div style="font-family: photoF;text-align: right;position:fixed; margin:0 auto; right : 20px; top: 10px; width:500px;height:50px;background-color:white;">
+		<div>
+		<br>	
+		<span id="signin"></span>
+		<br>	
+		<span id="login" style="width:300px;"></span>
+		<br>
 		<span id="logout"></span>
 		</div>
 		<script>

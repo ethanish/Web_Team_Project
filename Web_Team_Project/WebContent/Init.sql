@@ -2,6 +2,7 @@ use LOGDATA;
 
 drop table account;
 drop table tinfo;
+drop table guestbook;
 
 CREATE TABLE account(
 num int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -18,6 +19,15 @@ name char(20),
 description char(100),
 location char(10)
 );
+
+create table guestbook(
+gb_id int not null primary key auto_increment,
+gb_num int(10) not null,
+gb_title varchar(50) null,
+gb_date datetime not null,
+gb_contents varchar(500) null
+);
+
 
 insert into account(id,password,tel,name,birth_d) values("his","his","01012345678","È²ÀÎ½Â","1994-04-05");
 

@@ -5,6 +5,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<link href="font.css" rel="stylesheet">
 <script>
 	function checkValue(){
 		var form = document.userInfo;
@@ -20,10 +21,10 @@
 </script>
 </head>
 <body>
-	<h1 style="font-family: impact;">
-		<span class="mainlink" onclick="location.href='main.jsp'"> gotomain </span>
+	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
 	</h1>
-	<h2>로그인</h2>
+
 	
 	<div align=center>
 		<form action="login_process.jsp" method="POST">

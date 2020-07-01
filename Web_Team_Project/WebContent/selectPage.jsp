@@ -5,25 +5,8 @@
 <head>
 <meta charset="EUC-KR">
 <title>여행지 추천 사이트</title>
-
+<link href="font.css" rel="stylesheet">
 <style type="text/css">
-@font-face {
-
-	font-family: 'photoF';
-	src: url(PhotoFont.ttf);
-}
-
-@font-face {
-	font-family: 'rocatF';
-	src: url(rocatFont.ttf);
-}
-
-@font-face {
-	font-family: 'fireF';
-	src: url(fireFont.ttf);
-	font-color : #58ACF;
-}
-
 .button1 {
 	width: 100px;
 	background-color: #F33131;
@@ -58,7 +41,14 @@
 
 </head>
 <body>
-
+	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
+	</h1>
+	<%
+		String id = (String)session.getAttribute("uID");
+	%>
+	
+	
 	<div style="width : 50%;float:left;box-sizing:border-box;border:1px solid #000;">
 	<div style="text-align: center;">
 		<img src='airplane.png' width='241' height='244' />
@@ -89,7 +79,29 @@
 	</div>
 	
 	<div style="font-family: photoF;text-align: center;position:fixed; margin:0 auto;left:0;right:0; width:100px;height:50px;background-color:white;border:1px solid #000">
-	wodh0120님<br> 환영합니다.
+		
+		<div>	
+		<span id="signin"></span>	
+		<span id="login"></span>
+		<span id="logout"></span>
+	</div>
+	
+	<script>
+		var uid = '<%=id%>';
+		if(uid == "null"){
+			var $signin = document.getElementById("signin");
+			$signin.innerHTML = "<button type='button' class='nabyBtn' onClick='location.href=\"signin.jsp\"'>회원가입</button>";
+			var $login = document.getElementById("login");
+			$login.innerHTML = "<button type='button' class='nabyBtn' onClick='location.href=\"login.jsp\"'>로그인</button>";
+		
+		}else{
+			var $login = document.getElementById("login");
+			$login.innerHTML = uid+" 님 환영합니다.";
+			var $logout = document.getElementById("logout");
+			$logout.innerHTML = "<button type='button' class='nabyBtn' onClick='location.href=\"logout_process.jsp\"'>로그아웃</button>";	
+		}
+	</script>	
+
 	</div>
 
 </body>

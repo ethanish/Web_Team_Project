@@ -35,7 +35,7 @@
 <script type="text/javascript">
 if(<%=rs%> > 0){
 	alert("아이디 생성 완료");
-	location.href="main.jsp";
+	location.href="selectPage.jsp";
 }else{
 	alert("아이디가 중복됩니다");
 	history.go(-1);

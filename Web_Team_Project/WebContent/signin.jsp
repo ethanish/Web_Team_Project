@@ -5,6 +5,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<link href="font.css" rel="stylesheet">
 <script>
 	function checkValue(){
 		var form = document.userInfo;
@@ -18,10 +19,11 @@
         }
 	}
 </script>
+<link href="font.css" rel="stylesheet">
 </head>	
 <body>
-	<h1 style="font-family: impact;">
-		<span class="mainlink" onclick="location.href='main.jsp'"> gotomain </span>
+	<h1 class="mainframe" style="font-family: rocatF; position: fixed; left: 20px; top: 0px;">
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> Eight, </span>
 	</h1>
 	<h2>회원가입</h2>
 	
@@ -55,6 +57,6 @@
 	</form>
 	
 	<button type="button" class="nabyBtn"
-		onClick="location.href='main.jsp'">메인 페이지</button>
+		onClick="location.href='selectPage.jsp'">메인 페이지</button>
 </body>
 </html>

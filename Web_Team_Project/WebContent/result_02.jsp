@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+   pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,33 +7,33 @@
 <title>당신이 뽑은 여행지는?</title>
 <style>
 @font-face {
-	font-family: 'photoF';
-	src: url(PhotoFont.ttf);
+   font-family: 'photoF';
+   src: url(PhotoFont.ttf);
 }
 
 @font-face {
-	font-family: 'photoF3';
-	src: url(photoFont3.ttf);
+   font-family: 'photoF3';
+   src: url(photoFont3.ttf);
 }
 
 @font-face {
-	font-family: 'photoF1';
-	src: url(photoFont1.ttf);
+   font-family: 'photoF1';
+   src: url(photoFont1.ttf);
 }
 
 @font-face {
-	font-family: 'rocatF';
-	src: url(rocatFont.ttf);
+   font-family: 'rocatF';
+   src: url(rocatFont.ttf);
 }
 
 @font-face {
-	font-family: 'fireF';
-	src: url(fireFont.ttf);
+   font-family: 'fireF';
+   src: url(fireFont.ttf);
 }
 
 @font-face {
-	font-family: 'photoF2';
-	src: url(photoFont2.ttf);
+   font-family: 'photoF2';
+   src: url(photoFont2.ttf);
 }
 
 #dogname{
@@ -43,12 +43,12 @@ font-family: photoF3;
 }
 
 #info{
-	width : 30%; 
-	margin-left:auto;
-	margin-right:auto;
-	line-height : 2em;
-	font-family:photoF1;
-	font-size:15px;
+   width : 30%; 
+   margin-left:auto;
+   margin-right:auto;
+   line-height : 2em;
+   font-family:photoF1;
+   font-size:15px;
 }
 
 </style>

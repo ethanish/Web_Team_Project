@@ -51,7 +51,7 @@
 <script type="text/javascript">
 if(<%=uNum%> > -1 ){
 	alert("로그인에 성공했습니다");
-	location.href='main.jsp';
+	location.href='selectPage.jsp';
 }else{
 	alert("회원정보를 확인해주세요");
 	location.href='login.jsp';

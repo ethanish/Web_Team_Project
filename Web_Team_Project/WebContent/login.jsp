@@ -21,7 +21,7 @@
 </head>
 <body>
 	<h1 style="font-family: impact;">
-		<span class="mainlink" onclick="location.href='main.jsp'"> gotomain </span>
+		<span class="mainlink" onclick="location.href='selectPage.jsp'"> gotomain </span>
 	</h1>
 	<h2>·Î±×ÀÎ</h2>
 	

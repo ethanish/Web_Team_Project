@@ -78,7 +78,7 @@ font-family: photoF3;
 	%>
 	<script>
 
-			document.write("<div style='line-height: 7em; font-family: fireF; font-size: 35px; text-align: center; color:#F33131;'>당신이 뽑은 여행지는?</div><div style='text-align: center;'>");
+			document.write("<div style='line-height: 3em; font-family: fireF; font-size: 35px; text-align: center; color:#F33131;'>당신이 뽑은 여행지는?</div><div style='text-align: center;'>");
 			
 			var name = "<%=tname%>";
 			document.write("<div id='dogname'>"+name +"</div>");

@@ -54,6 +54,7 @@ font-family: photoF3;
 
 </style>
 </head>
+<%@ include file="dbconn.jsp" %>
 <body>
 
 	<script>
@@ -182,7 +183,6 @@ font-family: photoF3;
 		
 		index = Integer.toString(resultNum);
 		System.out.println(index);
-		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 		
@@ -190,15 +190,6 @@ font-family: photoF3;
 		String temp2 = null;
 		String temp3 = null;
 		try {
-			String url = "jdbc:mysql://localhost:3306/logdata?serverTimezone=UTC";
-			String user = "root";
-			String password = "wodyr12";
-			
-			
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(url, user, password);
-			System.out.println("sucesses");
-			
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("select name, description, location from tinfo where num = " + index);
 			

@@ -28,7 +28,7 @@
 	
 	<div align=center>
 		<h2>·Î±×ÀÎ</h2>
-		<form action="login_process.jsp" method="POST">
+		<form name = "userInfo" action="login_process.jsp" method="POST" onsubmit="return checkValue()">
 			<table width="250" border="1" align="center" cellspacing="0" cellpadding="5">
 				<tr>
 					<td>ID</td>

@@ -208,7 +208,7 @@ font-family: photoF3;
 			var resultn = '<%=index%>';
 			document.write("<img style='border: 2px solid black;border-radius: 70px;-moz-border-radius: 70px;-khtml-border-radius: 70px;-webkit-border-radius: 70px;' src='img/"+resultn+".jpg' width='256' height='170' />");
 			var description = '<%=temp2%>';
-			document.write("<div id='info'> <br><br>"+description+"</div>");
+			document.write("<div id='info'> <br><br>"+description+"<br><br><button onClick='location.href=\"guestbook_form.jsp\"'>방명록쓰기</button><br><br></div>");
 			
 			
 			document.write("</div>");

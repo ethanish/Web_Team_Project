@@ -87,7 +87,7 @@ font-family: photoF3;
 			var num = <%=num%>;
 			document.write("<img style='border: 2px solid black;border-radius: 70px;-moz-border-radius: 70px;-khtml-border-radius: 70px;-webkit-border-radius: 70px;' src='img/"+num+".jpg' width='256' height='170' />");
 			var desc = "<%=desc%>";
-			document.write("<div id='info'> <br><br>"+desc+"</div>");
+			document.write("<div id='info'> <br><br>"+desc+"<br><br><button onClick='location.href=\"guestbook_form.jsp\"'>방명록쓰기</button><br><br></div>");
 				
 			
 			

@@ -16,7 +16,7 @@
 		<h2>방명록:목록화면</h2>
 		<hr>
 		<form>
-			<a href="guestbook_form.jsp">방명록 쓰기</a><p>
+			<a href="guestbook_form.jsp">방명록 쓰기</a><p><button type="button" onclick="location.href='./selectPage.jsp'">처음페이지로</button>
 			<table cellpadding=5 cellspacing=0 border="1">
 				<tr bgcolor="#99CCFF">
 					<td>번호</td>

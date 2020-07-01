@@ -57,40 +57,40 @@ font-family: photoF3;
 	<%@ include file="dbconn.jsp" %>
 	<%	
 		Statement stmt = conn.createStatement();
-		String name = request.getParameter("tname");
-		String sql = "SELECT * FROM tinfo where name='"+name+"'";
+		String number = request.getParameter("tname");
+		String sql = "SELECT * FROM tinfo where num="+number;
 		ResultSet rs = stmt.executeQuery(sql);
-		
+		String tname=new String();
+		String desc=new String();
+		String loca=new String();
+		int num=0;
+
 		while(rs.next()){
-			String tname=rs.getString("name");
-			String desc=rs.getString("description");
-			String loca=rs.getString("location");
-			int num=rs.getInt("num");
+			tname=rs.getString("name");
+			desc=rs.getString("description");
+			loca=rs.getString("location");
+			num=rs.getInt("num");
 		}
-		
 		conn.close();
 	%>
 	<script>
-			var name = '<%=tname%>';
-			var desc = '<%=desc%>';
-			var loca = '<%=loca%>';
-			var num = <%=num%>;
+			var desc = "<%=desc%>";
+			var loca = "<%=loca%>";
 			document.write("<div style='line-height: 7em; font-family: fireF; font-size: 35px; text-align: center; color:#58ACFA;'>당신이 뽑은 여행지는?</div><div style='text-align: center;'>");
 			
+			var name = "<%=tname%>";
+			document.write("<div id='dogname'>"+name +"</div>");
+			var num = <%=num%>;
+			document.write("<img style='border: 2px solid black;border-radius: 70px;-moz-border-radius: 70px;-khtml-border-radius: 70px;-webkit-border-radius: 70px;' src='img/"+num+".jpg' width='256' height='170' />");
+			document.write("<div id='info'> <br><br>-------------------------------------<br><br><br><br><br></div>");
 			
-			for(var i= 0; i<32;i++){
-				if(resultNum == i){
-					document.write("<div id='dogname'>"+name +"</div>");
-					document.write("<img style='border: 2px solid black;border-radius: 70px;-moz-border-radius: 70px;-khtml-border-radius: 70px;-webkit-border-radius: 70px;' src=img/'"+num+".jpg' width='256' height='170' />");
-					document.write("<div id='info'> <br><br>-------------------------------------<br><br><br><br><br></div>");
-				}
-			}
-			
+			var desc = "<%=desc%>";
+			var loca = "<%=loca%>";
 				
 			
 			
 			document.write("</div>");
-		}
+		
 	</script>
 </body>
 </html>

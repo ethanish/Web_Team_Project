@@ -85,7 +85,11 @@
 	var fourIndex=0;
 	var randNum=[];
 	var tname=[];
-	
+	var oriname=[];
+
+	<%for(i=0; i<32;i++){%>
+	oriname[<%=i%>]='<%=name[i]%>';
+	<%}%>
 	for(var i=0;i<32;i++){
 		randNum[i]=Math.floor(Math.random()*32);
 		for(var j=0;j<i;j++){
@@ -324,12 +328,17 @@
 		document.getElementById("rightName").innerHTML = tname[image[four[fourIndex*2+1]].name];
 	}
 	function Final(num){
+		var index=0;
+		for(var i=0;i<31;i++){
+			if(oriname[i]==tname[image[two[num]].name])
+				index=i;
+		}
 		document.getElementById("leftName").innerHTML=" ";
 		document.getElementById("rightName").innerHTML=" ";
 		document.getElementById("round").innerHTML = "우승 "+tname[image[two[num]].name];
 		
 		document.getElementById("left").innerHTML=" ";
-		document.getElementById("right").innerHTML="<form action='result_02.jsp' method='post'><input type='hidden' value='"+tname[image[two[num]].name]+"' name='tname'><input type='submit' value='정보보러가기'></form>";
+		document.getElementById("right").innerHTML="<form action='result_02.jsp' method='post'><input type='hidden' value='"+index+"' name='tname'><input type='submit' value='정보보러가기'></form>";
 		document.getElementById("divVS").innerHTML="<img id='rightimg' src='img/"+image[two[num]].source+"'>";
 	}
 	</script>
